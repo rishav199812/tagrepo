@@ -4,7 +4,7 @@ stages {
 stage("Get dir size") {
     steps {
     script {
-      DIR_SIZE = sh(returnStdout: true, script: "git describe --tags")
+      DIR_SIZE = sh(returnStdout: true, script: "git describe --tags `git rev-list --tags --max-count=1` ")
     }
     echo "dir size = ${DIR_SIZE}"
         script{
