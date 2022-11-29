@@ -8,7 +8,7 @@ stage("Get dir size") {
     }
     echo "dir size = ${DIR_SIZE}"
         script{
-    if (${DIR_SIZE}.contains(pipeline)) {
+    if (${DIR_SIZE}.contains('pipeline')) {
               //when { tag pattern: '^sonar-*', comparator: "REGEXP" }
                      script{
                     zip archive: true, dir: 'pipeline_compressor', glob: '', zipFile: 'pipeline_compressor.zip'
